@@ -1,16 +1,163 @@
 @()
 
-<div class="jumbotron">
-    <div class="container">
-        <h1>GeoTrellis</h1>
-        <p>Fast raster processing for the web and the cluster.</p>
-        <p>
-            <a class="btn btn-primary btn-lg" role="button" href="#what-is-geotrellis">What is GeoTrellis?</a>
-            <a class="btn btn-primary btn-lg" role="button" href="introduction/getting-started/">Get Started</a>
-        </p>
+<div id="interactive-demos">
+    <div id="carousel-controller" class="carousel slide carousel-fade">
+      <div class="carousel-inner" id="demo-controllers">
+        <div id="controller-1" class="demo-container item active">
+            <h4 class="demo-controller-super-header">
+                GeoTrellis in Action:
+            </h4>
+            <h2 class="demo-controller-header">
+                Weighted overlay
+            </h2>
+            <p>
+                Try adjusting the weights for the proximity to a location to find the best spot in Philadelphia!
+            </p>
+            <p>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h6 class="demo-controller-label">Bars</h6>
+                    </div>
+                    <div class="col-sm-6">
+                        <input type="text" id="controller-1-amount-1" class="demo-amount" disabled>
+                    </div>
+                </div>
+                <div class="slider-marker"></div>
+                <div id="controller-1-slider-1"></div>
+            </p>
+            <p>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h6 class="demo-controller-label">Grocery Stores</h6>
+                    </div>
+                    <div class="col-sm-6">
+                        <input type="text" id="controller-1-amount-2" class="demo-amount" disabled>
+                    </div>
+                </div>
+                <div class="slider-marker"></div>
+                <div id="controller-1-slider-2"></div>
+            </p>
+            <p>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h6 class="demo-controller-label">Rail Stops</h6>
+                    </div>
+                    <div class="col-sm-6">
+                        <input type="text" id="controller-1-amount-3" class="demo-amount" disabled>
+                    </div>
+                </div>
+                <div class="slider-marker"></div>
+                <div id="controller-1-slider-3"></div>
+            </p>
+            <p class="h6">
+                Low &nbsp; <img src="img/red-to-blue.png"> &nbsp; High
+            </p>
+            <div id="map-preview-icons-1" class="map-preview-icons">
+                <div data-target="#carousel-controller" data-slide-to="1" class="map-preview-icon">
+                    <img src="img/map-preview-button-3.png">
+                    <div class="map-preview-label">Next: <strong>Hillshade</strong></div>
+                </div>
+            </div>
+        </div>
+        <div id="controller-2" class="demo-container item">
+            <h4 class="demo-controller-super-header">
+                GeoTrellis in Action:
+            </h4>
+            <h2 class="demo-controller-header">
+                Hillshade
+            </h2>
+            <p>
+                The GeoTrellis hillshade operation computes the illumination angle and shadows of a surface given a light source. Try adjusting the time of day to change the height of the light source.
+            </p>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h6 class="demo-controller-label">Time</h6>
+                    </div>
+                    <div class="col-sm-6">
+                        <input type="text" id="controller-2-amount-1" class="demo-amount" disabled>
+                    </div>
+                </div>
+            <div id="controller-2-slider-1"></div>
+            <div id="map-preview-icons-2" class="map-preview-icons">
+                <div data-target="#carousel-controller" data-slide-to="2" class="map-preview-icon">
+                    <img src="img/map-preview-button-1.png">
+                    <div class="map-preview-label">Next: <strong>Travelshed</strong></div>
+                </div>
+            </div>
+        </div>
+        <div id="controller-3" class="demo-container item">
+            <h4 class="demo-controller-super-header">
+                GeoTrellis in Action:
+            </h4>
+            <h2 class="demo-controller-header">
+                Travelshed
+            </h2>
+            <p>
+                The GeoTrellis travelshed operation computes the illumination angle and shadows of a surface given a light source. Try adjusting the time of day to change the height of the light source.
+            </p>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h6 class="demo-controller-label">Type of Transportation</h6>
+                    </div>
+                    <div class="col-sm-6">
+                        
+                    </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="btn-group btn-group-justified" data-toggle="buttons">
+                      <label class="btn btn-primary active">
+                        <input type="radio" name="options" id="option1"><i class="icon-school"></i> Walking
+                      </label>
+                      <label class="btn btn-primary">
+                        <input type="radio" name="options" id="option2"><i class="icon-bus"></i> Transit
+                      </label>
+                    </div>
+                  </div>
+                </div>
+            <div id="controller-3-slider-1"></div>
+            <div id="map-preview-icons-3" class="map-preview-icons">
+                <div data-target="#carousel-controller" data-slide-to="0" class="map-preview-icon">
+                    <img src="img/map-preview-button-2.png">
+                    <div class="map-preview-label">Next: <strong>Weighted Overlay</strong></div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div id="carousel-map" class="carousel slide carousel-fade">
+
+      <div class="carousel-inner" id="demo-maps">
+        <div class="item active">
+            <div id="map-1" class="demo-map">
+            </div>
+        </div>
+        <div class="item">
+            <div id="map-2" class="demo-map">
+            </div>
+        </div>
+        <div class="item">
+            <div id="map-3" class="demo-map">
+            </div>
+        </div>        
+      </div>
+
+      <a class="left carousel-control" data-target="#carousel-controller" data-slide="prev">
+        ‹
+      </a>
+      <a class="right carousel-control" data-target="#carousel-controller" data-slide="next">
+        ›
+      </a>
     </div>
 </div>
 <div id="what-is-geotrellis">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2 class="overview">GeoTrellis is a fast raster processing library for the web and the cluster.</h2>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-sm-4">
@@ -171,3 +318,4 @@
         </div>
     </div>
 </div>
+<script data-main="js/demo/main" src="js/require.min.js"></script>
